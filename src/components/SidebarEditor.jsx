@@ -45,7 +45,7 @@ flex-direction: column;
 align-items: center;
 justify-content: center;
 gap: 0.5rem;
-// margin-bottom: 60px;
+margin-bottom: 60px;
 
   &::-webkit-scrollbar {
   display: none;
@@ -53,10 +53,10 @@ gap: 0.5rem;
 `
 
 const SidebarEditor = ({ visible, setVisible }) => {
-  const [color, setColor] = useState('#fff');
+  const [color, setColor] = useState('#000');
   return (
     <Wrapper sidebarVisible={visible} color={colors.secondary}>
-      <div style={{ position: 'absolute', top: '10px', right: '10px', cursor: 'pointer' }} onClick={() => setVisible()}>
+      <div style={{ color: colors.quaternary, position: 'absolute', top: '10px', right: '10px', cursor: 'pointer' }} onClick={() => setVisible()}>
         {/* <FormControl>
           <RadioGroup
             row
@@ -71,20 +71,20 @@ const SidebarEditor = ({ visible, setVisible }) => {
         ✖
       </div>
       <Container>
-        <CustomSlider title='1' value={2}/>
-        <CustomSlider title='2' value={2}/>
+        <CustomSlider title='Title' value={2}/>
+        <CustomSlider title='Title' value={2}/>
         <ColorPicker value={color} onChange={(val) => setColor(val)} / >
-        <CustomSlider title='3' value={2}/>
-        <CustomSlider title='4' value={2}/>
-        <CustomSlider title='5' value={2}/>
-        <CustomSlider title='6' value={2}/>
-        <CustomSlider title='7' value={2}/>
-        <CustomSlider title='8' value={2}/>
-        <CustomSlider title='9' value={2}/>
-        <CustomSlider title='10' value={2}/>
-        <CustomSlider title='11' value={2}/>
-        <CustomSlider title='12' value={2}/>
-        <CustomSlider title='13' value={2}/>
+        <CustomSlider title='Title' value={2}/>
+        <CustomSlider title='Title' value={2}/>
+        <CustomSlider title='Title' value={2}/>
+        <CustomSlider title='Title' value={2}/>
+        <CustomSlider title='Title' value={2}/>
+        <CustomSlider title='Title' value={2}/>
+        <CustomSlider title='Title' value={2}/>
+        <CustomSlider title='Title' value={2}/>
+        <CustomSlider title='Title' value={2}/>
+        <CustomSlider title='Title' value={2}/>
+        <CustomSlider title='Title' value={2}/>
       </Container>
     </Wrapper >
   );

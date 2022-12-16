@@ -8,26 +8,25 @@
 
 .resizeable {
   position: absolute;
-  /* border: 2px solid #533535; */
-  width: 360px;
+  /*border: 2px solid #533535;
+  */width: 330px;
   height: 640px;
-  border-radius: 20px;
+  border-radius: 20px; 
   display: flex;
   justify-content: center;
   align-items: center;
   min-width: 150px;
   min-height: 150px;
   overflow: hidden;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
 }
 
 .resizer {
   position: absolute;
   background: black;
-  border-radius: 20px;
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  -ms-border-radius: 20px;
-  -o-border-radius: 20px;
 }
 
 .resizer-r {
@@ -58,7 +57,7 @@
 
 .resizer-b {
   cursor: row-resize;
-  height: 10px;
+  height: 12px;
   left: 0;
   bottom: 0;
   width: 100%;
