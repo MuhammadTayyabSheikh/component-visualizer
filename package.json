@@ -1,21 +1,25 @@
 {
-  "name": "componentvisualizer",
-  "version": "1.0.0",
-  "main": "node_modules/expo/AppEntry.js",
+  "name": "component-visualizer",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
-    "web": "expo start --web"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "dependencies": {
-    "expo": "~47.0.8",
-    "expo-status-bar": "~1.4.2",
-    "react": "18.1.0",
-    "react-native": "0.70.5"
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@mui/material": "^5.10.17",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "styled-components": "^5.3.6"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.9"
-  },
-  "private": true
+    "@types/react": "^18.0.24",
+    "@types/react-dom": "^18.0.8",
+    "@vitejs/plugin-react": "^2.2.0",
+    "vite": "^3.2.3"
+  }
 }
