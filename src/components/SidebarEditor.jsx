@@ -17,7 +17,6 @@ const Wrapper = styled.div`
   gap: 30px;
   align-items: center;
   justify-content: flex-start;
-  padding-top: 40px;
   padding: 40px 1rem 0 1rem;
   position: fixed;
   top: 0;
@@ -45,7 +44,7 @@ flex-direction: column;
 align-items: center;
 justify-content: center;
 gap: 0.5rem;
-margin-bottom: 60px;
+margin-bottom: 40px;
 
   &::-webkit-scrollbar {
   display: none;
@@ -53,7 +52,8 @@ margin-bottom: 60px;
 `
 
 const SidebarEditor = ({ visible, setVisible }) => {
-  const [color, setColor] = useState('#000');
+  const [color, setColor] = useState('#000000');
+  const [value, setValue] = useState(10);
   return (
     <Wrapper sidebarVisible={visible} color={colors.secondary}>
       <div style={{ color: colors.quaternary, position: 'absolute', top: '10px', right: '10px', cursor: 'pointer' }} onClick={() => setVisible()}>
@@ -71,20 +71,20 @@ const SidebarEditor = ({ visible, setVisible }) => {
         ✖
       </div>
       <Container>
-        <CustomSlider title='Title' value={2}/>
-        <CustomSlider title='Title' value={2}/>
-        <ColorPicker value={color} onChange={(val) => setColor(val)} / >
-        <CustomSlider title='Title' value={2}/>
-        <CustomSlider title='Title' value={2}/>
-        <CustomSlider title='Title' value={2}/>
-        <CustomSlider title='Title' value={2}/>
-        <CustomSlider title='Title' value={2}/>
-        <CustomSlider title='Title' value={2}/>
-        <CustomSlider title='Title' value={2}/>
-        <CustomSlider title='Title' value={2}/>
-        <CustomSlider title='Title' value={2}/>
-        <CustomSlider title='Title' value={2}/>
-        <CustomSlider title='Title' value={2}/>
+        <CustomSlider title='Title' value={value} onChange={(val) => setValue(val)} />
+        <CustomSlider title='Title' value={value} onChange={(val) => setValue(val)} />
+        <ColorPicker value={color} onChange={(val) => setColor(val)} title='Color' / >
+        <CustomSlider title='Title' value={value} onChange={(val) => setValue(val)} />
+        <CustomSlider title='Title' value={value} onChange={(val) => setValue(val)} />
+        <CustomSlider title='Title' value={value} onChange={(val) => setValue(val)} />
+        <CustomSlider title='Title' value={value} onChange={(val) => setValue(val)} />
+        <CustomSlider title='Title' value={value} onChange={(val) => setValue(val)} />
+        <CustomSlider title='Title' value={value} onChange={(val) => setValue(val)} />
+        <CustomSlider title='Title' value={value} onChange={(val) => setValue(val)} />
+        <CustomSlider title='Title' value={value} onChange={(val) => setValue(val)} />
+        <CustomSlider title='Title' value={value} onChange={(val) => setValue(val)} />
+        <CustomSlider title='Title' value={value} onChange={(val) => setValue(val)} />
+        <CustomSlider title='Title 13' value={value} onChange={(val) => setValue(val)} />
       </Container>
     </Wrapper >
   );

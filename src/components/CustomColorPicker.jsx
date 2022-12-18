@@ -4,7 +4,7 @@ import colors from "../config/colors";
 import AppText from "./AppText";
 
 const Wrapper = styled.div`
-  width: 102%;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -40,8 +40,8 @@ const Label = styled.label`
   background-color: ${({ background }) => background};
   background-color: black;
   height: 25px;
-  width: 45px;
-  border-radius: 5px;
+  width: 25px;
+  border-radius: 50%;
   overflow: hidden;
   padding: 0;
 `;
@@ -61,11 +61,14 @@ background: ${({ background }) => background};
 function CustomColorPicker({title, value, onChange}) {
   return (
     <Wrapper>
-      <AppText style={{ fontSize: '14', color: colors.quaternary }}>Color</AppText>
-      <Input background={colors.primary} color={colors.quaternary} value={value} onChange={(e) => onChange(e.target.value)}></Input>
+      <AppText style={{ fontSize: '14', color: colors.quaternary }}>{title}</AppText>
+      <div style={{ display: 'flex', justifyContent: 'space-between', gap: '0.5rem' }}>
+
       <Label background={color}>
         <ColorInput value={value} onChange={(e) => onChange(e.target.value)}/>
       </Label>
+      <Input background={colors.primary} color={colors.light} value={value} onChange={(e) => onChange(e.target.value)}></Input>
+      </div>
     </Wrapper>
   )
 }

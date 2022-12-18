@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Box from '@mui/material/Box';
-import Slider from '@mui/material/Slider';
+import ControlledSlider from '@mui/material/Slider';
 import AppText from "./AppText";
 import colors from "../config/colors";
 
@@ -10,18 +10,19 @@ align-items: flex-start;
 justify-content: center;
 flex-direction: column;
 width: 100%;
-// padding: 0 1rem;
 `;
 
 const Input = styled.input.attrs(props => ({
-  value: props.value
+  value: props.value,
+  maximum: 500
 }))`
 background: ${({ background }) => background};
- width: 30px;
+ width: 45px;
  border-radius: 5px;
-  padding: 2px 4px;
+  padding: 4px;
   border: none;
   color: ${({ color }) => color}; 
+  font-size: 14px;
 `;
 
 const CustomSlider = ({ title, value, onChange }) => {
@@ -29,22 +30,22 @@ const CustomSlider = ({ title, value, onChange }) => {
     <Wrapper>
       <div style={{ width: '100%', marginLeft: '-0.1rem', display: 'flex', justifyContent: 'space-between' }}>
         <AppText style={{ fontSize: '14', color: colors.quaternary }}>{title}</AppText>
-        <Input background={colors.primary} color={colors.quaternary} value={value} onChange={() => console.log("Value changed")}></Input>
+        <Input background={colors.primary} color={colors.light} value={value} onChange={(e) => onChange(e.target.value)}></Input>
       </div>
-    <Box width={'100%'}>
-      <Slider
-        size="small"
-        defaultValue={value}
-        aria-label="Small"
-        valueLabelDisplay="auto"
-        step={0.1}
-        // marks
-        min={0}
-        max={10}
-        onChange={(e, val) => console.log(val*16)}
+      <Box width={'100%'}>
+        <ControlledSlider
+          size="small"
+          // defaultValue={value}
+          value={value}
+          valueLabelDisplay="auto"
+          step={0.1}
+          // marks
+          min={0}
+          max={500}
+          onChange={(e, val) => onChange(val)}
         />
-    </Box>
-      </Wrapper>
+      </Box>
+    </Wrapper>
   );
 }
 
