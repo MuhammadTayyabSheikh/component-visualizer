@@ -48,22 +48,28 @@ export default function CustomPopupModal() {
         <Fade in={open}>
           <Box sx={style}>
             <WhiteTextTypography id="transition-modal-title" variant="h4" component="h2">
-              Welcome to ComponentVisualizer 
-              <span style={{fontSize:'10px',paddingLeft:'6px', position: 'relative', bottom: '16px'}} id="transition-modal-title">
+              Welcome to ComponentVisualizer
+              <span style={{ fontSize: '10px', paddingLeft: '6px', position: 'relative', bottom: '16px' }} id="transition-modal-title">
                 𝓑𝓮𝓽𝓪
               </span>
-              
+
             </WhiteTextTypography>
             <WhiteTextTypography id="transition-modal-description" sx={{ mt: 3 }}>
-              Info and instructions: 
+              Info and instructions:
               <br></br>
               ➜  The Mobile Screen is Resizeable from all sides.
               <br></br>
-              ➜  States are kept consistent (even page reloads).
+              ➜  States are kept consistent even
               <br></br>
-              ➜  Consistent States are not yet applied to styles.
+              »»»»» Page is reloaded.
               <br></br>
-              ➜ You can change mobile screen color (consisten state).
+              »»»»» Tab is closed.
+              <br></br>
+              »»»»» Browser is quitted.
+              <br></br>
+              ➜  Consistent States are not yet applied to component styles.
+              <br></br>
+              ➜ You can change mobile screen color (consistent state).
               <br></br>
               <br></br>
               ➜ UI and UX (user experience) suggestion are welcomed and appericiated
