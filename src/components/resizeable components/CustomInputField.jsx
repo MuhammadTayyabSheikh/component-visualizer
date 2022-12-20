@@ -6,7 +6,7 @@ const InputContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  background-color: ${props => props.bgColor || 'white'};
+  background-color: ${props => props.bgColor || '#fff'};
   padding: ${props => props.padding || '0.25rem'};
   border-radius: ${props => props.radius || '3px'};
   width: ${props => props.width || 'auto'};

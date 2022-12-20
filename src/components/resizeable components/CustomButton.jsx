@@ -4,12 +4,12 @@ import { FaSave } from 'react-icons/fa';
 
 const Button = styled.button`
   font-size: ${props => props.fontSize || '1em'};
-  color: ${props => props.color || 'black'};
-  background-color: ${props => props.bgColor || 'white'};
+  color: ${props => props.color || '#000'};
+  background-color: ${props => props.bgColor || '#fff'};
   border-radius: ${props => props.radius || '3px'};
-  padding: ${props => props.padding || '0.25em 0.5em'};
-  width: ${props => props.width || 'auto'};
-  height: ${props => props.height || 'auto'};
+  padding: ${props => props.padding || '0.5em 0.5em'};
+  width: ${props => props.width || '100%'};
+  height: ${props => props.height || '100%'};
   display: flex;
   align-items: center;
   justify-content: center;

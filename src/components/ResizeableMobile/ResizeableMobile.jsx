@@ -14,7 +14,8 @@ function ResizeableMobile({ sidebarVisible, setSidebarVisible, styles, setStyles
 
   const [screenColor, setScreenColor] = useState(localStorage.getItem("screenColor") || '#fff');
   const [activeComponent, setActiveComponent] = useState(!localStorage.getItem('activeComponent') ? 'Please Select a component from components screen!' : localStorage.getItem('activeComponent'));
-
+  
+  console.log(styles)
   useEffect(() => {
     localStorage.setItem("screenColor", screenColor);
   }, [screenColor]);
@@ -153,7 +154,7 @@ function ResizeableMobile({ sidebarVisible, setSidebarVisible, styles, setStyles
         <div ref={refBottom} className="resizer resizer-b"></div>
         {activeComponent === '0' ?
           <CustomButton {...styles}>Button</CustomButton> :
-          <CustomInputField placeholder='This is input field' />
+          <CustomInputField {...styles}  placeholder='This is input field' />
         }
       </div>
     </div>

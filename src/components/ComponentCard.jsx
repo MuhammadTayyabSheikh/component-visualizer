@@ -43,7 +43,7 @@ const ComponentCard = ({ component, compId }) => {
     <StyledCard className={classes.root}>
       {component}
       {/* <Link to='/editor'> */}
-      <CustomButton bgColor='#002b36' color='#b58900' width='100%' to='/editor' onClick={() => { localStorage.setItem('activeComponent', compId); navigate('/editor')}} >Edit</CustomButton>
+      <CustomButton bgColor='#002b36' color='#b58900' to='/editor' onClick={() => { localStorage.setItem('activeComponent', compId); navigate('/editor') }} >Edit</CustomButton>
       {/* </Link> */}
     </StyledCard>
   );

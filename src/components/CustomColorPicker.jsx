@@ -28,7 +28,7 @@ const ColorInput = styled.input.attrs(props => ({
   type: 'color',
   value: props.value
 
-  
+
 }))`
 width: 100%;
 height: 100%;
@@ -58,16 +58,15 @@ background: ${({ background }) => background};
   color: ${({ color }) => color}; 
 `;
 
-function CustomColorPicker({title, value, onChange}) {
+function CustomColorPicker({ title, value, onChange }) {
   return (
     <Wrapper>
       <AppText style={{ fontSize: '14', color: colors.quaternary }}>{title}</AppText>
       <div style={{ display: 'flex', justifyContent: 'space-between', gap: '0.5rem' }}>
-
-      <Label background={color}>
-        <ColorInput value={value} onChange={(e) => onChange(e.target.value)}/>
-      </Label>
-      <Input background={colors.primary} color={colors.light} value={value} onChange={(e) => onChange(e.target.value)}></Input>
+        <Label background={color}>
+          <ColorInput value={value} onChange={(e) => { onChange(e.target.value); console.log('COLOR INPUT---------------------', e.target.value)}} />
+        </Label>
+        <Input background={colors.primary} color={colors.light} value={value} onChange={(e) => onChange(e.target.value)}></Input>
       </div>
     </Wrapper>
   )
