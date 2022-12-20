@@ -55,21 +55,36 @@ export default function CustomPopupModal() {
 
             </WhiteTextTypography>
             <WhiteTextTypography id="transition-modal-description" sx={{ mt: 3 }}>
+              <WhiteTextTypography id="transition-modal-title" variant="h5" component="h2">
+              <br></br>
               Info and instructions:
+              </WhiteTextTypography>
               <br></br>
               ➜  The Mobile Screen is Resizeable from all sides.
               <br></br>
               ➜  States are kept persistent even
               <br></br>
-              »»»»» Page is reloaded.
+              ......... Page is reloaded.
               <br></br>
-              »»»»» Tab is closed.
+              ......... Tab is closed.
               <br></br>
-              »»»»» Browser is quitted.
-              <br></br>
-              ➜  Consistent States are not yet applied to component styles.
+              ......... Browser is quitted.
               <br></br>
               ➜ You can change mobile screen color (persistent state).
+              <br></br>
+              <br></br>
+              <WhiteTextTypography id="transition-modal-title" variant="h5" component="h2">
+                Latest Update:
+              </WhiteTextTypography>
+              ➜  Persistent States are applied to component styles.
+              <br></br>
+              ➜ Two most basic components are added
+              <br></br>
+              ......... Button
+              <br></br>
+              ......... Textfield
+              <br></br>
+              ➜ Both components are fully styleable with sliders.
               <br></br>
               <br></br>
               ➜ UI and UX (user experience) suggestion are welcomed and appericiated

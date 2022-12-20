@@ -42,7 +42,6 @@ const Editor = () => {
     <div style={{ height: 'fit-content', width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column-reverse', position: 'relative' }}>
       <SidebarEditor visible={sidebarVisible} setVisible={() => setSidebarVisible(false)} styles={styles} setStyles={setStyles} />
       <ResizeableMobile sidebarVisible={sidebarVisible} setSidebarVisible={setSidebarVisible} styles={styles} setStyles={setStyles} />
-      <CustomPopupModal />
     </div>
   )
 }
