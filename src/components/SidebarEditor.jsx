@@ -1,11 +1,6 @@
 import styled from "styled-components";
 import CustomSlider from "./CustomSlider";
 import colors from "../config/colors";
-import Radio from '@mui/material/Radio';
-import RadioGroup from '@mui/material/RadioGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import FormControl from '@mui/material/FormControl';
-import FormLabel from '@mui/material/FormLabel';
 import ColorPicker from "./CustomColorPicker";
 import { useState } from "react";
 
@@ -57,23 +52,12 @@ const SidebarEditor = ({ visible, setVisible }) => {
   return (
     <Wrapper sidebarVisible={visible} color={colors.secondary}>
       <div style={{ color: colors.quaternary, position: 'absolute', top: '10px', right: '10px', cursor: 'pointer' }} onClick={() => setVisible()}>
-        {/* <FormControl>
-          <RadioGroup
-            row
-            aria-labelledby="demo-row-radio-buttons-group-label"
-            name="row-radio-buttons-group"
-            onChange={(e) => console.log(e.target.value)}
-          >
-            <FormControlLabel size="small" value="female" control={<Radio />} label="px" />
-            <FormControlLabel size="small" value="male" control={<Radio />} label="rem" />
-          </RadioGroup>
-        </FormControl> */}
         ✖
       </div>
       <Container>
         <CustomSlider title='Title' value={value} onChange={(val) => setValue(val)} />
         <CustomSlider title='Title' value={value} onChange={(val) => setValue(val)} />
-        <ColorPicker value={color} onChange={(val) => setColor(val)} title='Color' / >
+        <ColorPicker value={color} onChange={(val) => setColor(val)} title='Color' />
         <CustomSlider title='Title' value={value} onChange={(val) => setValue(val)} />
         <CustomSlider title='Title' value={value} onChange={(val) => setValue(val)} />
         <CustomSlider title='Title' value={value} onChange={(val) => setValue(val)} />

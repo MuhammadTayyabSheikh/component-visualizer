@@ -2,8 +2,10 @@ import React, { useRef, useEffect, useState } from "react";
 import colors from "../../config/colors";
 import "./styles.css";
 import CustomColorPicker from '../CustomColorPicker'
+import CustomButton from './../resizeable components/CustomButton';
+import CustomInputField from "../resizeable components/CustomInputField";
 
-function ResizeableMobile({ sidebarVisible, setSidebarVisible }) {
+function ResizeableMobile({ sidebarVisible, setSidebarVisible, styles, setStyles }) {
   const ref = useRef(null);
   const refLeft = useRef(null);
   const refTop = useRef(null);
@@ -11,6 +13,7 @@ function ResizeableMobile({ sidebarVisible, setSidebarVisible }) {
   const refBottom = useRef(null);
 
   const [screenColor, setScreenColor] = useState(localStorage.getItem("screenColor") || '#fff');
+  const [activeComponent, setActiveComponent] = useState(!localStorage.getItem('activeComponent') ? 'Please Select a component from components screen!' : localStorage.getItem('activeComponent'));
 
   useEffect(() => {
     localStorage.setItem("screenColor", screenColor);
@@ -136,22 +139,23 @@ function ResizeableMobile({ sidebarVisible, setSidebarVisible }) {
   }, []);
 
   return (
-    <div style={{width: 'max-content', display: 'flex', flexDirection: 'column', gap: '0rem', jystifyContent: 'center', alignItems: 'center', position: 'relative' }}>
-      <div style={{ display:'flex', width: '100%', position: 'absolute', top: '10px', right: '-40px', justifyContent: 'space-between'}}>
+    <div style={{ width: 'max-content', display: 'flex', flexDirection: 'column', gap: '0rem', jystifyContent: 'center', alignItems: 'center', position: 'relative' }}>
+      <div style={{ display: 'flex', width: '100%', position: 'absolute', top: '10px', right: '-40px', justifyContent: 'space-between' }}>
         <button style={{ color: colors.tershary, cursor: 'pointer', paddingLeft: '15px' }} onClick={() => setSidebarVisible(!sidebarVisible)}>{sidebarVisible ? 'Close Editor' : 'Open Editor'}</button>
-        <div >
-        <CustomColorPicker value={screenColor} onChange={(val) => setScreenColor(val)} />
+        <div>
+          <CustomColorPicker value={screenColor} onChange={(val) => setScreenColor(val)} />
         </div>
       </div>
-      {/* <div style={{ color: colors.quaternary }}> */}
-        <div ref={ref} className="resizeable" style={{ background: screenColor }}>
-          <div ref={refLeft} className="resizer resizer-l"></div>
-          <div ref={refTop} className="resizer resizer-t"></div>
-          <div ref={refRight} className="resizer resizer-r"></div>
-          <div ref={refBottom} className="resizer resizer-b"></div>
-          Component Will be Shown here!
-        </div>
-      {/* </div> */}
+      <div ref={ref} className="resizeable" style={{ background: screenColor }}>
+        <div ref={refLeft} className="resizer resizer-l"></div>
+        <div ref={refTop} className="resizer resizer-t"></div>
+        <div ref={refRight} className="resizer resizer-r"></div>
+        <div ref={refBottom} className="resizer resizer-b"></div>
+        {activeComponent === '0' ?
+          <CustomButton {...styles}>Button</CustomButton> :
+          <CustomInputField placeholder='This is input field' />
+        }
+      </div>
     </div>
   );
 }
