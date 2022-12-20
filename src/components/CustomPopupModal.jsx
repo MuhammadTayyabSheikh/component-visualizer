@@ -59,7 +59,7 @@ export default function CustomPopupModal() {
               <br></br>
               ➜  The Mobile Screen is Resizeable from all sides.
               <br></br>
-              ➜  States are kept consistent even
+              ➜  States are kept persistent even
               <br></br>
               »»»»» Page is reloaded.
               <br></br>
@@ -69,7 +69,7 @@ export default function CustomPopupModal() {
               <br></br>
               ➜  Consistent States are not yet applied to component styles.
               <br></br>
-              ➜ You can change mobile screen color (consistent state).
+              ➜ You can change mobile screen color (persistent state).
               <br></br>
               <br></br>
               ➜ UI and UX (user experience) suggestion are welcomed and appericiated
