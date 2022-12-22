@@ -5,7 +5,7 @@ import AceEditor from 'react-ace';
 import 'ace-builds/src-noconflict/mode-javascript';
 import "ace-builds/src-noconflict/theme-vibrant_ink";
 import "ace-builds/src-noconflict/ext-language_tools";
-import './CustomTextArea.css';
+import './CustomtextArea.css';
 
 function CustomTextArea(props) {
   const editorRef = useRef(null);

@@ -5,7 +5,16 @@
   -moz-border-radius: 8px 0px 0px 8px;
   -ms-border-radius: 8px 0px 0px 8px;
   -o-border-radius: 8px 0px 0px 8px;
+
+  -ms-overflow-style: none;
+    scrollbar-width: none;
 }
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+
 
 .custom-button {
   position: absolute;
