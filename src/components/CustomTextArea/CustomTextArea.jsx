@@ -18,30 +18,27 @@ function CustomTextArea(props) {
 
 
   function handleCopyClick() {
-    editorRef.current.editor.selectAll();
-    document.execCommand('copy');
+    navigator.clipboard.writeText(props.value);
     setCopied(true);
   }
 
   return (
     <div className="custom-text-area">
       <AceEditor
-        id='editor'
+        // id='editor'
         ref={editorRef}
         value={props.value}
         mode="javascript"
         theme="vibrant_ink"
         style={{ height: props.height, borderRadius: '0px 6px 6px 0px', backgroundColor: '#002b36', }}
         width={props.width}
-        fontSize={12}
+        fontSize={13}
         showPrintMargin={false}
-        showGutter={true}
+        // showGutter={true}
         highlightActiveLine={true}
-        scrollBar={false}
         setOptions={{
-          showLineNumbers: true,
-          tabSize: 1,
-          scrollBar: true,
+          // showLineNumbers: true,
+          tabSize: 4,
         }}
       />
       <button className="custom-button" style={{ marginRight: '10px' }}>

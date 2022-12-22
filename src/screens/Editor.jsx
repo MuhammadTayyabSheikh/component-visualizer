@@ -120,7 +120,7 @@ const Editor = () => {
           </div>
           <CustomTextArea value={code()} height='70vh' width='50vw' />
         </div>
-        <CustomTextArea value={generateCode.reactBasicButtonCall({styles})} height='23vh' width='50vw' />
+        <CustomTextArea value={"       \n\n\n\n\n                                         Underdevelopment"} height='23vh' width='50vw' />
       </div>
       <ResizeableMobile sidebarVisible={sidebarVisible} setSidebarVisible={setSidebarVisible} styles={activeComponent === '0' ? styles : inputFieldStyles} setStyles={activeComponent === '0' ? setStyles : setInputFieldStyles} />
     </div>
