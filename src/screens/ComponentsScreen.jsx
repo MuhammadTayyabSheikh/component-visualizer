@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import CustomButton from '../components/resizeable components/CustomButton';
 import CustomInputField from '../components/resizeable components/CustomInputField';
 import CustomPopupModal from '../components/CustomPopupModal';
+import CustomRadioButton from '../components/CustomRadioButton';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -34,17 +35,11 @@ const ResponsiveCardGrid = () => {
       </Typography>
       <StyledGrid container spacing={3}>
         <Grid item xs={2}>
-          <ComponentCard compId='0'  component={<CustomButton>Button</CustomButton>}/>
+          <ComponentCard compId='0' component={<CustomButton>Button</CustomButton>} />
         </Grid>
         <Grid item xs={2}>
-          <ComponentCard compId='1'  component={<CustomInputField placeholder='This is an input field'></CustomInputField> }/>
+          <ComponentCard compId='1' component={<CustomInputField placeholder='This is an input field'></CustomInputField>} />
         </Grid>
-        {/* <Grid item xs={2}>
-          <ComponentCard />
-        </Grid>
-        <Grid item xs={2}>
-          <ComponentCard />
-        </Grid> */}
       </StyledGrid>
     </div>
   );

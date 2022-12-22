@@ -8,12 +8,14 @@ const Button = styled.button`
   background-color: ${props => props.bgColor || '#fff'};
   border-radius: ${props => props.radius || '3px'};
   padding: ${props => props.padding || '0.5em 0.5em'};
+  border: ${props => props.borderWidth + ' ' + props.borderColor + ' solid'};
   width: ${props => props.width || '100%'};
   height: ${props => props.height || '100%'};
   display: flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
+  min-width: min-content;
   cursor: pointer;
 `;
 

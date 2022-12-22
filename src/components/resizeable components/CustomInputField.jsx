@@ -9,6 +9,7 @@ const InputContainer = styled.div`
   background-color: ${props => props.bgColor || '#fff'};
   padding: ${props => props.padding || '0.25rem'};
   border-radius: ${props => props.radius || '3px'};
+  border: ${props => props.borderWidth + ' ' + props.borderColor + ' solid'};
   width: ${props => props.width || 'auto'};
   height: ${props => props.height || 'auto'};
 `;

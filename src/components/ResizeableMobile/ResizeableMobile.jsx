@@ -14,8 +14,7 @@ function ResizeableMobile({ sidebarVisible, setSidebarVisible, styles, setStyles
 
   const [screenColor, setScreenColor] = useState(localStorage.getItem("screenColor") || '#fff');
   const [activeComponent, setActiveComponent] = useState(!localStorage.getItem('activeComponent') ? 'Please Select a component from components screen!' : localStorage.getItem('activeComponent'));
-  
-  console.log(styles)
+
   useEffect(() => {
     localStorage.setItem("screenColor", screenColor);
   }, [screenColor]);
@@ -140,21 +139,27 @@ function ResizeableMobile({ sidebarVisible, setSidebarVisible, styles, setStyles
   }, []);
 
   return (
-    <div style={{ width: 'max-content', display: 'flex', flexDirection: 'column', gap: '0rem', jystifyContent: 'center', alignItems: 'center', position: 'relative' }}>
-      <div style={{ display: 'flex', width: '100%', position: 'absolute', top: '10px', right: '-40px', justifyContent: 'space-between' }}>
+    <div style={{ width: 'max-content', display: 'flex', flexDirection: 'column', gap: '0rem', jystifyContent: 'center', alignItems: 'center', position: 'relative', marginTop: '-5rem' }}>
+      <div style={{ display: 'flex', width: '100%', position: 'absolute', top: '10px', right: '-40px', justifyContent: 'space-between', textAlign: 'center' }}>
         <button style={{ color: colors.tershary, cursor: 'pointer', paddingLeft: '15px' }} onClick={() => setSidebarVisible(!sidebarVisible)}>{sidebarVisible ? 'Close Editor' : 'Open Editor'}</button>
         <div>
           <CustomColorPicker value={screenColor} onChange={(val) => setScreenColor(val)} />
         </div>
       </div>
-      <div ref={ref} className="resizeable" style={{ background: screenColor }}>
+      <div ref={ref} className="resizeable" style={{ background: screenColor, textAlign: 'center', fontFamily: 'sans-serif', fontSize: '15px', fontWeight: '300' }}>
         <div ref={refLeft} className="resizer resizer-l"></div>
         <div ref={refTop} className="resizer resizer-t"></div>
         <div ref={refRight} className="resizer resizer-r"></div>
         <div ref={refBottom} className="resizer resizer-b"></div>
         {activeComponent === '0' ?
           <CustomButton {...styles}>Button</CustomButton> :
-          <CustomInputField {...styles}  placeholder='This is input field' />
+          activeComponent === '1' ?
+            <CustomInputField {...styles} placeholder='This is input field' />
+            : <>
+              Please Select a component from Components Screen first to edit in this editor.
+              <br></br>
+              Thank You
+            </>
         }
       </div>
     </div>

@@ -38,7 +38,7 @@ display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: center;
-gap: 0.5rem;
+gap: 1.5rem;
 margin-bottom: 40px;
 
   &::-webkit-scrollbar {
@@ -47,27 +47,25 @@ margin-bottom: 40px;
 `
 
 const SidebarEditor = ({ visible, setVisible, styles, setStyles }) => {
-  const [color, setColor] = useState('#000000');
-  const [value, setValue] = useState(10);
-  console.log(styles.color)
   return (
     <Wrapper sidebarVisible={visible} color={colors.secondary}>
       <div style={{ color: colors.quaternary, position: 'absolute', top: '10px', right: '10px', cursor: 'pointer' }} onClick={() => setVisible()}>
         ✖
       </div>
 
-
       <Container>
         <ColorPicker title='Color' value={styles.color} onChange={(val) => { setStyles({ ...styles, color: val }); console.log(val) }} />
         <ColorPicker title='Bg Color' value={styles.bgColor} onChange={(val) => setStyles({ ...styles, bgColor: val })} />
+        <ColorPicker title='Border Color' value={styles.borderColor} onChange={(val) => setStyles({ ...styles, borderColor: val })} />
         <ColorPicker title='Placeholder Color' value={styles.placeholderColor} onChange={(val) => setStyles({ ...styles, placeholderColor: val })} />
         <CustomSlider title='Width' value={styles.width.slice(0, -2)} onChange={(val) => setStyles({ ...styles, width: val + 'px' })} />
         <CustomSlider title='Height' value={styles.height.slice(0, -2)} onChange={(val) => setStyles({ ...styles, height: val + 'px' })} />
         <CustomSlider title='Padding' value={styles.padding.slice(0, -2)} onChange={(val) => setStyles({ ...styles, padding: val + 'px' })} />
         <CustomSlider title='Font Size' value={styles.fontSize.slice(0, -2)} onChange={(val) => setStyles({ ...styles, fontSize: val + 'px' })} />
         <CustomSlider title='Radius' value={styles.radius.slice(0, -2)} onChange={(val) => setStyles({ ...styles, radius: val + 'px' })} />
+        <CustomSlider title='Border Width' value={styles.borderWidth.slice(0, -2)} onChange={(val) => setStyles({ ...styles, borderWidth: val + 'px' })} />
         <CustomSlider title='Icon Margin' value={styles.iconMargin.slice(0, -2)} onChange={(val) => setStyles({ ...styles, iconMargin: val + 'px' })} />
-        <CustomSlider title='Placeholder Font Size' value={styles.placeholderFontSize.slice(0, -2)} onChange={(val) => setStyles({ ...styles, placeholderFontSize: val + 'px' })} />
+        <CustomSlider title='Placeholder Size' value={styles.placeholderFontSize.slice(0, -2)} onChange={(val) => setStyles({ ...styles, placeholderFontSize: val + 'px' })} />
 
         {/* <CustomSlider title='Title' value={value} onChange={(val) => setStyles(val)} /> */}
         {/* <CustomSlider title='Title' value={value} onChange={(val) => setStyles(val)} /> */}
