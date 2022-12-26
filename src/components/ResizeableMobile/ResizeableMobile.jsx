@@ -4,6 +4,7 @@ import "./styles.css";
 import CustomColorPicker from '../CustomColorPicker'
 import CustomButton from './../resizeable components/CustomButton';
 import CustomInputField from "../resizeable components/CustomInputField";
+import { FaCopy, FaPersonBooth, FaSave, FaUser } from 'react-icons/fa';
 
 function ResizeableMobile({ sidebarVisible, setSidebarVisible, styles, setStyles }) {
   const ref = useRef(null);
@@ -152,9 +153,11 @@ function ResizeableMobile({ sidebarVisible, setSidebarVisible, styles, setStyles
         <div ref={refRight} className="resizer resizer-r"></div>
         <div ref={refBottom} className="resizer resizer-b"></div>
         {activeComponent === '0' ?
-          <CustomButton {...styles}>Button</CustomButton> :
+          <CustomButton {...styles} 
+            icon={FaCopy} 
+          >Button</CustomButton> :
           activeComponent === '1' ?
-            <CustomInputField {...styles} placeholder='This is input field' />
+            <CustomInputField {...styles} icon={FaUser} placeholder='This is input field' />
             : <>
               Please Select a component from Components Screen first to edit in this editor.
               <br></br>

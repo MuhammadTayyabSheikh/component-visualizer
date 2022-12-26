@@ -15,6 +15,7 @@ const Editor = () => {
       fontSize: '16px',
       color: '#000000',
       bgColor: '#2aa198',
+      iconColor: '#ffffff',
       radius: '8px',
       padding: '5px',
       width: '80px',
@@ -22,7 +23,8 @@ const Editor = () => {
       iconMargin: '10px',
       placeholderFontSize: '16px',
       borderColor: '#000000',
-      borderWidth: '1px'
+      borderWidth: '1px',
+      iconSize: '20px',
     }
     :
     JSON.parse(localStorage.getItem('buttonStyles')));
@@ -32,15 +34,17 @@ const Editor = () => {
       fontSize: '16px',
       color: '#00ffea',
       bgColor: '#ff0000',
+      iconColor: '#ffffff',
       radius: '8px',
       padding: '5px',
       width: '200px',
       height: '30px',
-      iconMargin: '10px',
       placeholderFontSize: '16px',
       placeholderColor: '#8f8e8e',
       borderColor: '#000000',
-      borderWidth: '1px'
+      borderWidth: '1px',
+      iconMargin: '10px',
+      iconSize: '20px',
     }
     :
     JSON.parse(localStorage.getItem('inputFieldStyles')));
@@ -91,6 +95,52 @@ const Editor = () => {
     }
     return "No Code found!"
   }
+  const smallCode = () => {
+    if (activeComponent === '0') {
+      if (selectedLanguage === 'React') {
+        if (selectedCodeversion === 'Basic') {
+          // const codeIs = generateCode.reactBasicButton({styles});
+          const codeIs = generateCode.smallBasic();
+          return codeIs;
+        } else if (selectedCodeversion === 'Static') {
+          const codeIs = generateCode.reactButtonCall({styles});
+          return codeIs;
+        }
+      } else if (selectedLanguage === 'React Native') {
+        if (selectedCodeversion === 'Basic') {
+          // const codeIs = generateCode.reactNativeBasicButton({styles});
+          const codeIs = generateCode.smallBasic();
+          return codeIs;
+        } else if (selectedCodeversion === 'Static') {
+          // const codeIs = generateCode.reactNativeButton({styles});
+          const codeIs = generateCode.reactNativeButtonCall({ styles });
+          return codeIs;
+        }
+      }
+    } else if(activeComponent === '1'){
+      if (selectedLanguage === 'React') {
+        if (selectedCodeversion === 'Basic') {
+          // const codeIs = generateCode.reactBasicInputfield({styles: inputFieldStyles});
+          const codeIs = generateCode.smallBasic();
+          return codeIs;
+        } else if (selectedCodeversion === 'Static') {
+          const codeIs = generateCode.reactInputfieldCall({ styles: inputFieldStyles });
+          return codeIs;
+        }
+      } else if (selectedLanguage === 'React Native') {
+        if (selectedCodeversion === 'Basic') {
+          // const codeIs = generateCode.reactNativeBasicInputField({ styles: inputFieldStyles });
+          const codeIs = generateCode.smallBasic();
+          return codeIs;
+        } else if (selectedCodeversion === 'Static') {
+          // const codeIs = generateCode.reactNativeInputField({ styles: inputFieldStyles });
+          const codeIs = generateCode.reactNativeInputfieldCall({ styles: inputFieldStyles });
+          return codeIs;
+        }
+      }
+    }
+    return "No Code found!"
+  }
 
   useEffect(() => {
     localStorage.setItem('buttonStyles', JSON.stringify(styles));
@@ -120,7 +170,7 @@ const Editor = () => {
           </div>
           <CustomTextArea value={code()} height='70vh' width='50vw' />
         </div>
-        <CustomTextArea value={"       \n\n\n\n\n                                         Underdevelopment"} height='23vh' width='50vw' />
+        <CustomTextArea value={smallCode()} height='23vh' width='50vw' />
       </div>
       <ResizeableMobile sidebarVisible={sidebarVisible} setSidebarVisible={setSidebarVisible} styles={activeComponent === '0' ? styles : inputFieldStyles} setStyles={activeComponent === '0' ? setStyles : setInputFieldStyles} />
     </div>

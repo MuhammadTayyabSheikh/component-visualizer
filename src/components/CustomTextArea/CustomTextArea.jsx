@@ -41,7 +41,7 @@ function CustomTextArea(props) {
           tabSize: 4,
         }}
       />
-      <button className="custom-button" style={{ marginRight: '10px' }}>
+      <button className="custom-button">
         {copied ?
           <div >
             <FaCheck />

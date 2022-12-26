@@ -104,6 +104,16 @@ export default StyledButton;
 `);
 }
 
+const reactButtonCall = ({ styles }) => {
+  return (`import { FaCopy } from 'react-icons/fa';
+<StyledButton
+  icon={FaCopy}  
+  iconSize={${styles.iconSize}}
+  iconColor={${styles.iconColor}}
+/>
+  `);
+}
+
 const reactBasicInputfield = ({ styles }) => {
   return (`
 import React from 'react';
@@ -210,6 +220,16 @@ export default StyledInput;
 `);
 }
 
+const reactInputfieldCall = ({ styles }) => {
+  return (`import { FaUser } from 'react-icons/fa';
+<StyledInput
+  icon={FaUser}  
+  iconSize={${styles.iconSize}}
+  iconColor={${styles.iconColor}}
+/>
+  `);
+}
+
 const reactNativeBasicButton = ({ styles }) => {
   return (`
 import React from 'react';
@@ -298,6 +318,15 @@ export default StyledButton;
 `);
 }
 
+const reactNativeButtonCall = ({ styles }) => {
+  return (`<StyledButton
+  iconName='alarm-outline'
+  iconSize={${styles.iconSize}}
+  iconColor={${styles.iconColor}}
+/>
+  `);
+}
+
 const reactNativeBasicInputField = ({ styles }) => {
   return (`
 import React from 'react';
@@ -352,7 +381,6 @@ export default StyledInput;
 }
 
 const reactNativeInputField = ({ styles }) => {
-  console.log("------------------|||||||||||||||||||||||||||||||||||||||||||||||||||", styles);
   return (`
 import React from 'react';
 import styled from 'styled-components/native';
@@ -405,29 +433,42 @@ export default StyledInput;
   `);
 }
 
+const reactNativeInputfieldCall = ({ styles }) => {
+  return (`<StyledInput
+  icon='person'  
+  iconSize={${styles.iconSize}}
+  iconColor={${styles.iconColor}}
+/>
+  `);
+}
+
+const smallBasic = () => {
+  return `
+           \n\n\n\n                                      Underdevelopment
+  `
+}
+
 export default {
   reactBasicButton,
   reactBasicButtonCall,
 
   reactButton,
-
+  reactButtonCall,
 
   reactBasicInputfield,
 
-
   reactInputfield,
-
-
+  reactInputfieldCall,
 
   reactNativeBasicButton,
 
-
   reactNativeButton,
-
+  reactNativeButtonCall,
 
   reactNativeBasicInputField,
 
-
   reactNativeInputField,
+  reactNativeInputfieldCall,
 
+  smallBasic
 };
