@@ -67,7 +67,7 @@ const SidebarEditor = ({ visible, setVisible, styles, setStyles }) => {
         <CustomSlider title='Border Width' value={styles.borderWidth.slice(0, -2)} onChange={(val) => setStyles({ ...styles, borderWidth: val + 'px' })} />
         <CustomSlider title='Placeholder Size' value={styles.placeholderFontSize.slice(0, -2)} onChange={(val) => setStyles({ ...styles, placeholderFontSize: val + 'px' })} />
         <CustomSlider title='Icon Margin' value={styles.iconMargin.slice(0, -2)} onChange={(val) => setStyles({ ...styles, iconMargin: val + 'px' })} />
-        <CustomSlider title='Icon Size' value={styles.iconSize.slice(0, -2)} onChange={(val) => setStyles({ ...styles, iconSize: val + 'px' })} />
+        <CustomSlider title='Icon Size' value={styles.iconSize.slice(0, -2)} onChange={(val) => setStyles({ ...styles, iconSize: val })} />
       </Container>
     </Wrapper >
   );

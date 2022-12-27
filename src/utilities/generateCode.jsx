@@ -1,16 +1,15 @@
 const reactBasicButton = ({ styles }) => {
-  return (`
-import React from 'react';
+  return (`import React from 'react';
 import styled from 'styled-components';
 import { FaSave } from 'react-icons/fa';
 
 const Button = styled.button\`
-  font-size: \$\{${props => props.fontSize || '1em'}\};
-  color: \$\{${props => props.color || 'black'}\};
-  background-color: \$\{${props => props.bgColor || 'white'}\};
+  font-size: \$\{${props => props.fontSize || '16px'}\};
+  color: \$\{${props => props.color || '#000000'}\};
+  background-color: \$\{${props => props.bgColor || '#ffffff'}\};
   border-radius: \$\{${props => props.radius || '3px'}\};
-  padding: \$\{${props => props.padding || '0.25em 1em'}\};
-  border: \$\{${props => props.borderWidth + ' ' + props.borderColor + ' solid'}\};
+  padding: \$\{${props => props.padding || '4px 16px'}\};
+  border: \$\{${props => (props.borderWidth + ' ' + props.borderColor + ' solid') || '1px solid #000000'}\};
   width: \$\{${props => props.width || 'auto'}\};
   height: \$\{${props => props.height || 'auto'}\};
   display: flex;
@@ -21,7 +20,7 @@ const Button = styled.button\`
   \`;
 
 const Icon = styled.div\`
-  margin-right: \$\{${props => props.iconMargin || '0.5em'}\};
+  margin-right: \$\{${props => props.iconMargin || '8px'}\};
 \`;
 
 const StyledButton = (props) => {
@@ -42,28 +41,32 @@ export default StyledButton;
 }
 
 const reactBasicButtonCall = ({ styles }) => {
-  return (`
-<StyledButton
-  {...StyledButtonStyles}
-  icon={FaSave}
-  iconSize="24px"
-  iconColor={style.color}
->
-  Save
-</StyledButton>
+  return (`import styled from 'styled-components';
+import { FaCopy } from 'react-icons/fa';
+import StyledButton from '../components/StyledButton'
 
-const styles = StyleSheet.create({
-  StyledButtonStyles: {
-    
-  }
-});
+const SubmitButton = styled.StyledButton\`
+  ${styles.fontSize !== '16px' ? 'font-size: ' + styles.fontSize + ";" : ''}
+  ${styles.color !== '#000000' ? 'color: ' + styles.color + ";" : ''}
+  ${styles.bgColor !== '#ffffff' ? 'background-color: ' + styles.bgColor + ";" : ''}
+  ${styles.radius !== '#ffffff' ? 'border-radius: ' + styles.radius + ";" : ''}
+  ${styles.padding !== '4px 16px' ? 'padding: ' + styles.padding + ";" : ''}
+  ${(styles.borderWidth !== '1px' || styles.borderColor !== '#000000') ? 'border: ' + styles.borderWidth + ' ' + styles.borderColor + ' solid' + ";" : ''}
+  ${styles.width !== 'auto' ? 'width: ' + styles.width + ";" : ''}
+  ${styles.height !== 'auto' ? 'height: ' + styles.height + ";" : ''}
+\`;
 
+//Component call
+<SubmitButton
+  icon={FaCopy}  
+  iconSize={${styles.iconSize}}
+  iconColor={${styles.iconColor}}
+/>
   `);
 }
 
 const reactButton = ({ styles }) => {
-  return (`
-import React from 'react';
+  return (`import React from 'react';
 import styled from 'styled-components';
 import { FaSave } from 'react-icons/fa';
 
@@ -115,8 +118,7 @@ const reactButtonCall = ({ styles }) => {
 }
 
 const reactBasicInputfield = ({ styles }) => {
-  return (`
-import React from 'react';
+  return (`import React from 'react';
 import styled from 'styled-components';
 import { FaUser } from 'react-icons/fa';
 
@@ -133,12 +135,12 @@ const InputContainer = styled.div\`
 
 const Input = styled.input\`
   flex: 1;
-  font-size: \$\{${props => props.fontSize || '1em'}\};
+  font-size: \$\{${props => props.fontSize || '16px'}\};
   color: \$\{${props => props.color || 'black'}\};
-  padding: \$\{${props => props.padding || '0.25em 1em'}\};
+  padding: \$\{${props => props.padding || '4px 16px'}\};
   ::placeholder {
   color: \$\{${props => props.placeholderColor || 'gray'}\};
-  font-size: \$\{${props => props.placeholderFontSize || '1em'}\};
+  font-size: \$\{${props => props.placeholderFontSize || '16px'}\};
 }
 \`;
 
@@ -167,9 +169,33 @@ export default StyledInput;
 `);
 }
 
+const reactBasicInputfieldCall = ({ styles }) => {
+  return (`import styled from 'styled-components';
+import { FaUser } from 'react-icons/fa';
+import StyledButton from '../components/StyledButton'
+
+const SubmitButton = styled.StyledButton\`
+  ${styles.fontSize !== '16px' ? 'font-size: ' + styles.fontSize + ";" : ''}
+  ${styles.color !== '#000000' ? 'color: ' + styles.color + ";" : ''}
+  ${styles.bgColor !== '#ffffff' ? 'background-color: ' + styles.bgColor + ";" : ''}
+  ${styles.radius !== '#ffffff' ? 'border-radius: ' + styles.radius + ";" : ''}
+  ${styles.padding !== '4px 16px' ? 'padding: ' + styles.padding + ";" : ''}
+  ${(styles.borderWidth !== '1px' || styles.borderColor !== '#000000') ? 'border: ' + styles.borderWidth + ' ' + styles.borderColor + ' solid' + ";" : ''}
+  ${styles.width !== 'auto' ? 'width: ' + styles.width + ";" : ''}
+  ${styles.height !== 'auto' ? 'height: ' + styles.height + ";" : ''}
+\`;
+
+//Component call
+<SubmitButton
+  icon={FaUser}  
+  iconSize={${styles.iconSize}}
+  iconColor={${styles.iconColor}}
+/>
+  `);
+};
+
 const reactInputfield = ({ styles }) => {
-  return (`
-import React from 'react';
+  return (`import React from 'react';
 import styled from 'styled-components';
 import { FaUser } from 'react-icons/fa';
 
@@ -231,8 +257,7 @@ const reactInputfieldCall = ({ styles }) => {
 }
 
 const reactNativeBasicButton = ({ styles }) => {
-  return (`
-import React from 'react';
+  return (`import React from 'react';
 import styled from 'styled-components/native';
 import { View, Text, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -242,7 +267,7 @@ const Button = styled(TouchableOpacity)\`
   color: \$\{${props => props.color || 'black'}\};
   background-color: \$\{${props => props.bgColor || 'white'}\};
   border-radius: \$\{${props => props.radius || 3}\};
-  padding: \$\{${props => props.padding || '0.25em 1em'}\};
+  padding: \$\{${props => props.padding || '4px 16px'}\};
   border: \$\{${props => props.borderWidth + ' ' + props.borderColor + ' solid'}\};
   width: \$\{${props => props.width || 'auto'}\};
   height: \$\{${props => props.height || 'auto'}\};
@@ -254,7 +279,7 @@ const Button = styled(TouchableOpacity)\`
   \`;
 
 const IconContainer = styled.View\`
-  margin-right: \$\{${props => props.iconMargin || '0.5em'}\};
+  margin-right: \$\{${props => props.iconMargin || '8px'}\};
 \`;
 
 const StyledButton = (props) => {
@@ -274,9 +299,32 @@ export default StyledButton;
   `);
 }
 
+const reactNativeBasicButtonCall = ({ styles }) => {
+  return (`import styled from 'styled-components';
+import StyledButton from '../components/StyledButton;'
+
+const SubmitButton = styled.StyledButton\`
+  ${styles.fontSize !== '16px' ? 'font-size: ' + styles.fontSize + ";" : ''}
+  ${styles.color !== '#000000' ? 'color: ' + styles.color + ";" : ''}
+  ${styles.bgColor !== '#ffffff' ? 'background-color: ' + styles.bgColor + ";" : ''}
+  ${styles.radius !== '#ffffff' ? 'border-radius: ' + styles.radius + ";" : ''}
+  ${styles.padding !== '4px 16px' ? 'padding: ' + styles.padding + ";" : ''}
+  ${(styles.borderWidth !== '1px' || styles.borderColor !== '#000000') ? 'border: ' + styles.borderWidth + ' ' + styles.borderColor + ' solid' + ";" : ''}
+  ${styles.width !== 'auto' ? 'width: ' + styles.width + ";" : ''}
+  ${styles.height !== 'auto' ? 'height: ' + styles.height + ";" : ''}
+\`;
+
+//Component call
+<SubmitButton
+  icon='user'  
+  iconSize={${styles.iconSize}}
+  iconColor={${styles.iconColor}}
+/>
+  `);
+}
+
 const reactNativeButton = ({ styles }) => {
-  return (`
-import React from 'react';
+  return (`import React from 'react';
 import styled from 'styled-components/native';
 import { View, Text, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -328,8 +376,7 @@ const reactNativeButtonCall = ({ styles }) => {
 }
 
 const reactNativeBasicInputField = ({ styles }) => {
-  return (`
-import React from 'react';
+  return (`import React from 'react';
 import styled from 'styled-components/native';
 import { View, TextInput, Text } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -349,7 +396,7 @@ const Input = styled(TextInput)\`
   flex: 1;
   font-size: \$\{${props => props.fontSize || 20}\};
   color: \$\{${props => props.color || 'black'}\};
-  padding: \$\{${props => props.padding || '0.25em 1em'}\};
+  padding: \$\{${props => props.padding || '4px 16px'}\};
   ::placeholder {
   color: \$\{${props => props.placeholderColor || 'gray'}\};
   font-size: \$\{${props => props.placeholderFontSize || 20}\};
@@ -381,8 +428,7 @@ export default StyledInput;
 }
 
 const reactNativeInputField = ({ styles }) => {
-  return (`
-import React from 'react';
+  return (`import React from 'react';
 import styled from 'styled-components/native';
 import { View, TextInput, Text } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -461,6 +507,7 @@ export default {
   reactInputfieldCall,
 
   reactNativeBasicButton,
+  reactNativeBasicButtonCall,
 
   reactNativeButton,
   reactNativeButtonCall,

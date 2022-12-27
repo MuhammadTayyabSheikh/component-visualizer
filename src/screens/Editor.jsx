@@ -14,7 +14,7 @@ const Editor = () => {
     {
       fontSize: '16px',
       color: '#000000',
-      bgColor: '#2aa198',
+      bgColor: '#b58900',
       iconColor: '#ffffff',
       radius: '8px',
       padding: '5px',
@@ -32,19 +32,19 @@ const Editor = () => {
   const [inputFieldStyles, setInputFieldStyles] = useState(!localStorage.getItem('inputFieldStyles') ?
     {
       fontSize: '16px',
-      color: '#00ffea',
-      bgColor: '#ff0000',
+      color: '#ffffff',
+      bgColor: '#b58900',
       iconColor: '#ffffff',
       radius: '8px',
       padding: '5px',
       width: '200px',
       height: '30px',
       placeholderFontSize: '16px',
-      placeholderColor: '#8f8e8e',
+      placeholderColor: '#002b36',
       borderColor: '#000000',
       borderWidth: '1px',
       iconMargin: '10px',
-      iconSize: '20px',
+      iconSize: '20',
     }
     :
     JSON.parse(localStorage.getItem('inputFieldStyles')));
@@ -99,8 +99,7 @@ const Editor = () => {
     if (activeComponent === '0') {
       if (selectedLanguage === 'React') {
         if (selectedCodeversion === 'Basic') {
-          // const codeIs = generateCode.reactBasicButton({styles});
-          const codeIs = generateCode.smallBasic();
+          const codeIs = generateCode.reactBasicButtonCall({ styles });
           return codeIs;
         } else if (selectedCodeversion === 'Static') {
           const codeIs = generateCode.reactButtonCall({styles});
@@ -108,11 +107,9 @@ const Editor = () => {
         }
       } else if (selectedLanguage === 'React Native') {
         if (selectedCodeversion === 'Basic') {
-          // const codeIs = generateCode.reactNativeBasicButton({styles});
-          const codeIs = generateCode.smallBasic();
+          const codeIs = generateCode.reactNativeBasicButtonCall({ styles });
           return codeIs;
         } else if (selectedCodeversion === 'Static') {
-          // const codeIs = generateCode.reactNativeButton({styles});
           const codeIs = generateCode.reactNativeButtonCall({ styles });
           return codeIs;
         }
@@ -120,7 +117,6 @@ const Editor = () => {
     } else if(activeComponent === '1'){
       if (selectedLanguage === 'React') {
         if (selectedCodeversion === 'Basic') {
-          // const codeIs = generateCode.reactBasicInputfield({styles: inputFieldStyles});
           const codeIs = generateCode.smallBasic();
           return codeIs;
         } else if (selectedCodeversion === 'Static') {
@@ -129,11 +125,9 @@ const Editor = () => {
         }
       } else if (selectedLanguage === 'React Native') {
         if (selectedCodeversion === 'Basic') {
-          // const codeIs = generateCode.reactNativeBasicInputField({ styles: inputFieldStyles });
           const codeIs = generateCode.smallBasic();
           return codeIs;
         } else if (selectedCodeversion === 'Static') {
-          // const codeIs = generateCode.reactNativeInputField({ styles: inputFieldStyles });
           const codeIs = generateCode.reactNativeInputfieldCall({ styles: inputFieldStyles });
           return codeIs;
         }
