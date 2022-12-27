@@ -32,7 +32,7 @@ function CustomTextArea(props) {
         theme="vibrant_ink"
         style={{ height: props.height, borderRadius: '0px 6px 6px 0px', backgroundColor: '#002b36', }}
         width={props.width}
-        fontSize={13}
+        fontSize={15}
         showPrintMargin={false}
         // showGutter={true}
         highlightActiveLine={true}
@@ -41,13 +41,13 @@ function CustomTextArea(props) {
           tabSize: 4,
         }}
       />
-      <button className="custom-button">
+      <button className="custom-button" style={{ cursor: 'pointer' }}>
         {copied ?
           <div >
             <FaCheck />
           </div>
           :
-          <div onClick={handleCopyClick}>
+          <div onClick={handleCopyClick} className="custom-button" style={{cursor: 'pointer'}}>
             <FaCopy />
           </div>
         }

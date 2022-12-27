@@ -5,14 +5,14 @@ import styled from 'styled-components';
 import { FaSave } from 'react-icons/fa';
 
 const Button = styled.button\`
-  font-size: ${props => props.fontSize || '1em'};
-  color: ${props => props.color || 'black'};
-  background-color: ${props => props.bgColor || 'white'};
-  border-radius: ${props => props.radius || '3px'};
-  padding: ${props => props.padding || '0.25em 1em'};
-  border: ${props => props.borderWidth + ' ' + props.borderColor + ' solid'};
-  width: ${props => props.width || 'auto'};
-  height: ${props => props.height || 'auto'};
+  font-size: \$\{${props => props.fontSize || '1em'}\};
+  color: \$\{${props => props.color || 'black'}\};
+  background-color: \$\{${props => props.bgColor || 'white'}\};
+  border-radius: \$\{${props => props.radius || '3px'}\};
+  padding: \$\{${props => props.padding || '0.25em 1em'}\};
+  border: \$\{${props => props.borderWidth + ' ' + props.borderColor + ' solid'}\};
+  width: \$\{${props => props.width || 'auto'}\};
+  height: \$\{${props => props.height || 'auto'}\};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -21,7 +21,7 @@ const Button = styled.button\`
   \`;
 
 const Icon = styled.div\`
-  margin-right: ${props => props.iconMargin || '0.5em'};
+  margin-right: \$\{${props => props.iconMargin || '0.5em'}\};
 \`;
 
 const StyledButton = (props) => {
@@ -124,27 +124,27 @@ const InputContainer = styled.div\`
   display: flex;
   flex-direction: row;
   align-items: center;
-  background-color: ${props => props.bgColor || 'white'};
-  border-radius: ${props => props.radius || '3px'};
-  border: ${props => props.borderWidth + ' ' + props.borderColor + ' solid'};
-  width: ${props => props.width || 'auto'};
-  height: ${props => props.height || 'auto'};
+  background-color: \$\{${props => props.bgColor || 'white'}\};
+  border-radius: \$\{${props => props.radius || '3px'}\};
+  border: \$\{${props => props.borderWidth + ' ' + props.borderColor + ' solid'}\};
+  width: \$\{${props => props.width || 'auto'}\};
+  height: \$\{${props => props.height || 'auto'}\};
   \`;
 
 const Input = styled.input\`
   flex: 1;
-  font-size: ${props => props.fontSize || '1em'};
-  color: ${props => props.color || 'black'};
-  padding: ${props => props.padding || '0.25em 1em'};
+  font-size: \$\{${props => props.fontSize || '1em'}\};
+  color: \$\{${props => props.color || 'black'}\};
+  padding: \$\{${props => props.padding || '0.25em 1em'}\};
   ::placeholder {
-  color: ${props => props.placeholderColor || 'gray'};
-  font-size: ${props => props.placeholderFontSize || '1em'};
+  color: \$\{${props => props.placeholderColor || 'gray'}\};
+  font-size: \$\{${props => props.placeholderFontSize || '1em'}\};
 }
 \`;
 
 const IconContainer = styled.div\`
-  width: ${props => props.iconSize || '40px'};
-  height: ${props => props.iconSize || '40px'};
+  width: \$\{${props => props.iconSize || '40px'}\};
+  height: \$\{${props => props.iconSize || '40px'}\};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -238,14 +238,14 @@ import { View, Text, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 const Button = styled(TouchableOpacity)\`
-  font-size: ${props => props.fontSize || 20};
-  color: ${props => props.color || 'black'};
-  background-color: ${props => props.bgColor || 'white'};
-  border-radius: ${props => props.radius || 3};
-  padding: ${props => props.padding || '0.25em 1em'};
-  border: ${props => props.borderWidth + ' ' + props.borderColor + ' solid'};
-  width: ${props => props.width || 'auto'};
-  height: ${props => props.height || 'auto'};
+  font-size: \$\{${props => props.fontSize || 20}\};
+  color: \$\{${props => props.color || 'black'}\};
+  background-color: \$\{${props => props.bgColor || 'white'}\};
+  border-radius: \$\{${props => props.radius || 3}\};
+  padding: \$\{${props => props.padding || '0.25em 1em'}\};
+  border: \$\{${props => props.borderWidth + ' ' + props.borderColor + ' solid'}\};
+  width: \$\{${props => props.width || 'auto'}\};
+  height: \$\{${props => props.height || 'auto'}\};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -254,7 +254,7 @@ const Button = styled(TouchableOpacity)\`
   \`;
 
 const IconContainer = styled.View\`
-  margin-right: ${props => props.iconMargin || '0.5em'};
+  margin-right: \$\{${props => props.iconMargin || '0.5em'}\};
 \`;
 
 const StyledButton = (props) => {
@@ -338,27 +338,27 @@ const InputContainer = styled.View\`
   display: flex;
   flex-direction: row;
   align-items: center;
-  background-color: ${props => props.bgColor || 'white'};
-  border-radius: ${props => props.radius || 3};
-  border: ${props => props.borderWidth + ' ' + props.borderColor + ' solid'};
-  width: ${props => props.width || 'auto'};
-  height: ${props => props.height || 'auto'};
+  background-color: \$\{${props => props.bgColor || 'white'}\};
+  border-radius: \$\{${props => props.radius || 3}\};
+  border: \$\{${props => props.borderWidth + ' ' + props.borderColor + ' solid'}\};
+  width: \$\{${props => props.width || 'auto'}\};
+  height: \$\{${props => props.height || 'auto'}\};
   \`;
 
 const Input = styled(TextInput)\`
   flex: 1;
-  font-size: ${props => props.fontSize || 20};
-  color: ${props => props.color || 'black'};
-  padding: ${props => props.padding || '0.25em 1em'};
+  font-size: \$\{${props => props.fontSize || 20}\};
+  color: \$\{${props => props.color || 'black'}\};
+  padding: \$\{${props => props.padding || '0.25em 1em'}\};
   ::placeholder {
-  color: ${props => props.placeholderColor || 'gray'};
-  font-size: ${props => props.placeholderFontSize || 20};
+  color: \$\{${props => props.placeholderColor || 'gray'}\};
+  font-size: \$\{${props => props.placeholderFontSize || 20}\};
 }
 \`;
 
 const IconContainer = styled.View\`
-  width: ${props => props.iconSize || 40};
-  height: ${props => props.iconSize || 40};
+  width: \$\{${props => props.iconSize || 40}\};
+  height: \$\{${props => props.iconSize || 40}\};
   align-items: center;
   justify-content: center;
 \`;
